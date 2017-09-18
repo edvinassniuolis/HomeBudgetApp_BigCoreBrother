@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using HomeBudgetApp_BigCoreBrother.Builder;
+using HomeBudgetApp_BigCoreBrother.Factory;
 using System.Windows.Forms;
 
 namespace HomeBudgetApp_BigCoreBrother
@@ -15,6 +9,15 @@ namespace HomeBudgetApp_BigCoreBrother
         public mainForm()
         {
             InitializeComponent();
+            InitExpenses();
+        }
+
+        public void InitExpenses()
+        {
+            var product = new ProductFactory().Create();
+            var service = new ServiceFactory().Create();
+
+            var newProduct = new ProductBuilder().AddName(productExpensesTxtBox.Text).Add();
         }
     }
 }
